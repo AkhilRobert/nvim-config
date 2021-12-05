@@ -23,6 +23,9 @@ key_mapper('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
 
 -- Buffer
 key_mapper('n', '<leader>bc', ':BufferClose<CR>')
+key_mapper('n', '<leader>bn', ':bnext<CR>')
+key_mapper('n', '<leader>bp', ':bprevious<CR>')
+
 
 -- NvimTree
 key_mapper('n', '<leader>e', ':NvimTreeToggle<CR>')
