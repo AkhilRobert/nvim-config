@@ -12,7 +12,7 @@ lsp_installer.on_server_ready(function(server)
 			opts.settings = {
 				Lua = {
 					telementry = {
-						enabel = false,
+						enable = false,
 					},
 					diagnostics = {
 						globals = {'vim'}
