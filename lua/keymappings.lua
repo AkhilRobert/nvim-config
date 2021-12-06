@@ -11,7 +11,7 @@ key_mapper('n', '<C-n>', ":nohl<CR>")
 
 -- LSP
 key_mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
-key_mapper('n', 'gD', ':lua vim.lsp.buf.declartion()<CR>')
+key_mapper('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 key_mapper('n', 'gi', ':lua vim.lsp.buf.references()<CR>')
 key_mapper('n', '<leader>ln', ':lua vim.lsp.buf.rename()<CR>')
 key_mapper('n', '<leader>la', ':lua vim.lsp.buf.code_action()<CR>')
