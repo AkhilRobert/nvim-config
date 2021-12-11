@@ -16,41 +16,86 @@ packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
 	use("onsails/lspkind-nvim")
-
-	-- For vsnip users.
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 
-	-- Highlight
+	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
+		consfig = function()
+			local ok, telescope = pcall(require, "telescope")
+			if not ok then
+				return error("Unable to load telescope")
+			end
+			telescope.setup()
+		end,
 	})
 
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+		config = function()
+			local ok, treesitter = pcall(require, "plugins.treesitter_setup")
+			if not ok then
+				return error("Unable to load treesitter")
+			end
+			treesitter.setup()
+		end,
+	})
 
 	use("ChristianChiarulli/nvim-ts-rainbow")
-	use("windwp/nvim-autopairs")
+
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			local ok, autopairs = pcall(require, "plugins.autopairs")
+			if not ok then
+				return error("Unable to load autopairs", 0)
+			end
+			autopairs.setup()
+		end,
+	})
 	use("windwp/nvim-ts-autotag")
 
 	-- Formatter & Linter
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
-		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		config = function()
+			local ok, null = pcall(require, "plugins.null")
+			if not ok then
+				return error("Unable to load null-ls", 0)
+			end
+			null.setup()
+		end,
 	})
 
 	-- Comments
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
-			require("Comment").setup()
+			local ok, comment = pcall(require, "plugins.commenter")
+			if not ok then
+				return error("Unable to load commenter", 0)
+			end
+			comment.setup()
 		end,
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			local ok, git = pcall(require, "plugins.gitsigns")
+			if not ok then
+				return error("Unable to load gitsigns", 0)
+			end
+			git.setup()
+		end,
+	})
 
 	-- Editor
 	use({
@@ -64,7 +109,13 @@ packer.startup(function(use)
 	})
 	use({
 		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = function()
+			local ok, lualine = pcall(require, "plugins.statusline")
+			if not ok then
+				return error("Unable to load status line", 0)
+			end
+			lualine.setup()
+		end,
 	})
 
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")

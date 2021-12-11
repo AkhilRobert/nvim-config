@@ -1,7 +1,10 @@
 local null_ls = require("null-ls")
+local lspconfig = require("lspconfig")
 local formatter = null_ls.builtins.formatting
+local M = {}
 
 local sources = {
+	-- ts, js
 	formatter.prettier,
 
 	-- python
@@ -12,12 +15,15 @@ local sources = {
 	formatter.stylua,
 }
 
-null_ls.config({ sources = sources })
+M.setup = function()
+	null_ls.config({ sources = sources })
+	lspconfig["null-ls"].setup({
+		on_attach = function(client)
+			if client.resolved_capabilities.document_formatting then
+				vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+			end
+		end,
+	})
+end
 
-require("lspconfig")["null-ls"].setup({
-	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-		end
-	end,
-})
+return M
