@@ -4,7 +4,7 @@ require("packer-setup")
 require("plugins")
 require("keymappings")
 
-require('lsp')
+require("lsp")
 require("colorscheme")
 
 -- @todo find a better way to handle this plugin import
