@@ -25,6 +25,22 @@ lsp_installer.on_server_ready(function(server)
 		}
 	end
 
+	if server.name == "jsonls" then
+		opts.settings = {
+			json = {
+				schemas = {
+					{
+						fileMatch = { "package.json" },
+						url = "https://json.schemastore.org/package.json",
+					},
+				},
+			},
+		}
+		opts.on_attach = function(client)
+			client.resolved_capabilities.document_formatting = false
+		end
+	end
+
 	-- tsserver settings
 	if server.name == "tsserver" then
 		opts.init_options = require("nvim-lsp-ts-utils").init_options
