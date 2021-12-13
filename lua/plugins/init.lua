@@ -23,7 +23,7 @@ packer.startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
-		consfig = function()
+		config = function()
 			local ok, telescope = pcall(require, "telescope")
 			if not ok then
 				return error("Unable to load telescope")
@@ -104,7 +104,7 @@ packer.startup(function(use)
 			"kyazdani42/nvim-web-devicons", -- optional, for file icon
 		},
 		config = function()
-			require("nvim-tree").setup({})
+			require("plugins.tree").setup()
 		end,
 	})
 	use({
@@ -119,4 +119,11 @@ packer.startup(function(use)
 	})
 
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
+
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({})
+		end,
+	})
 end)
