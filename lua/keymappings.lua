@@ -12,7 +12,11 @@ key_mapper("n", "<leader>ln", ":lua vim.lsp.buf.rename()<CR>")
 key_mapper("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>")
 
 -- Telescope
-key_mapper("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>')
+key_mapper(
+	"n",
+	"<leader>ff",
+	":lua require(\"telescope.builtin\").find_files(require('telescope.themes').get_dropdown())<CR>"
+)
 key_mapper("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>')
 key_mapper("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
 
