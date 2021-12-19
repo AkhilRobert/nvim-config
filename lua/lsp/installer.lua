@@ -1,17 +1,15 @@
 local lsp_installer = require("nvim-lsp-installer")
-local handler = require("lsp.handlers")
+local nvim_cmp = require("cmp_nvim_lsp")
 
 local tsserver = require("lsp.settings.tsserver")
 local jsonls = require("lsp.settings.jsonls")
 local sumneko = require("lsp.settings.sumneko")
 
 lsp_installer.on_server_ready(function(server)
-	local opts = {
-		capabilities = handler.capabilities,
-	}
+	local opts = { capabilities = nvim_cmp.update_capabilities(vim.lsp.protocol.make_client_capabilities()) }
 
 	if server.name == "tsserver" then
-		opts.tbl_deep_extend("force", tsserver.opts, opts)
+		opts = vim.tbl_deep_extend("force", tsserver.opts, opts)
 	end
 
 	if server.name == "sumneko_lua" then
