@@ -1,5 +1,4 @@
 ---@diagnostic disable: redundant-parameter
--- Setup nvim-cmp.
 local cmp = require("cmp")
 local M = {}
 

@@ -6,5 +6,3 @@ require("keymappings")
 
 require("lsp")
 require("colorscheme")
-
-require("plugins.cmp").setup()

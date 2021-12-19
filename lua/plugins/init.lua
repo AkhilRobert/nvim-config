@@ -53,10 +53,6 @@ packer.startup(function(use)
 	-- Formatter & Linter
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			local null = require("plugins.null")
-			null.setup()
-		end,
 	})
 
 	-- Comments

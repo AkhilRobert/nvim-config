@@ -6,7 +6,6 @@ local M = {}
 
 local sources = {
 	-- ts, js
-	-- @TODO: Improve This
 	formatter.prettier,
 
 	diagnostics.eslint_d.with({
