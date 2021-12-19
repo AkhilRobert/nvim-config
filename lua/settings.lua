@@ -12,5 +12,7 @@ o.shiftwidth = 2
 wo.number = true
 wo.relativenumber = true
 o.splitright = true
+o.scrolloff = 10
+o.sidescrolloff = 5
 
 vim.g.mapleader = ","
