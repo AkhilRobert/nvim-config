@@ -24,10 +24,7 @@ packer.startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 		config = function()
-			local ok, telescope = pcall(require, "telescope")
-			if not ok then
-				return error("Unable to load telescope")
-			end
+			local telescope = require("telescope")
 			telescope.setup()
 		end,
 	})
@@ -37,10 +34,7 @@ packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
-			local ok, treesitter = pcall(require, "plugins.treesitter_setup")
-			if not ok then
-				return error("Unable to load treesitter")
-			end
+			local treesitter = require("plugins.treesitter_setup")
 			treesitter.setup()
 		end,
 	})
@@ -50,10 +44,7 @@ packer.startup(function(use)
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
-			local ok, autopairs = pcall(require, "plugins.autopairs")
-			if not ok then
-				return error("Unable to load autopairs", 0)
-			end
+			local autopairs = require("plugins.autopairs")
 			autopairs.setup()
 		end,
 	})
@@ -63,10 +54,7 @@ packer.startup(function(use)
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
-			local ok, null = pcall(require, "plugins.null")
-			if not ok then
-				return error("Unable to load null-ls", 0)
-			end
+			local null = require("plugins.null")
 			null.setup()
 		end,
 	})
@@ -75,10 +63,7 @@ packer.startup(function(use)
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
-			local ok, comment = pcall(require, "plugins.commenter")
-			if not ok then
-				return error("Unable to load commenter", 0)
-			end
+			local comment = require("plugins.commenter")
 			comment.setup()
 		end,
 	})
@@ -89,11 +74,8 @@ packer.startup(function(use)
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
-			local ok, git = pcall(require, "plugins.gitsigns")
-			if not ok then
-				return error("Unable to load gitsigns", 0)
-			end
-			git.setup()
+			local gitsigns = require("plugins.gitsigns")
+			gitsigns.setup()
 		end,
 	})
 
@@ -110,11 +92,8 @@ packer.startup(function(use)
 	use({
 		"nvim-lualine/lualine.nvim",
 		config = function()
-			local ok, lualine = pcall(require, "plugins.statusline")
-			if not ok then
-				return error("Unable to load status line", 0)
-			end
-			lualine.setup()
+			local statusline = require("plugins.statusline")
+			statusline.setup()
 		end,
 	})
 
