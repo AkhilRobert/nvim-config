@@ -1,7 +1,9 @@
 local ts_utils = require("nvim-lsp-ts-utils")
+local lsp_status = require("lsp-status")
 local M = {}
 
 local on_attach = function(client, bufnr)
+	-- disables formatting
 	client.resolved_capabilities.document_formatting = false
 
 	ts_utils.setup({
@@ -20,29 +22,18 @@ local on_attach = function(client, bufnr)
 		},
 		import_all_scan_buffers = 100,
 		import_all_select_source = false,
-
-		-- filter diagnostics
-		filter_out_diagnostics_by_severity = {},
-		filter_out_diagnostics_by_code = {},
-
-		-- inlay hints
-		auto_inlay_hints = false,
-		inlay_hints_highlight = "Comment",
-
-		-- update imports on file move
-		update_imports_on_move = false,
-		require_confirmation_on_move = false,
-		watch_dir = nil,
 	})
 
 	-- required to fix code action ranges and filter diagnostics
 	ts_utils.setup_client(client)
 
-	-- no default maps, so you may want to define some here
 	local opt = { silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opt)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opt)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opt)
+
+	-- lsp_status does not work for client
+	-- lsp_status.on_attach(client)
 end
 
 M.opts = {

@@ -1,4 +1,5 @@
 local M = {}
+local lsp_status = require("lsp-status")
 
 local schemas = {
 	{
@@ -10,6 +11,7 @@ local schemas = {
 
 local on_attach = function(client)
 	client.resolved_capabilities.document_formatting = false
+	lsp_status.on_attach(client)
 end
 
 M.opts = {

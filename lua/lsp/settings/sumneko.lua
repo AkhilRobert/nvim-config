@@ -1,6 +1,8 @@
+local lsp_status = require("lsp-status")
 local M = {}
 
 M.opts = {
+	on_attach = lsp_status.on_attach,
 	settings = {
 		Lua = {
 			telementry = {

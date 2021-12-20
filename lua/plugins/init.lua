@@ -104,4 +104,6 @@ packer.startup(function(use)
 			})
 		end,
 	})
+
+	use("nvim-lua/lsp-status.nvim")
 end)
