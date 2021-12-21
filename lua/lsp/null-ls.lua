@@ -22,6 +22,10 @@ local sources = {
 	formatter.black,
 	formatter.isort,
 
+	-- go
+	formatter.gofumpt,
+	diagnostics.revive,
+
 	-- lua
 	formatter.stylua,
 }

@@ -10,6 +10,7 @@ packer.startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use({ "williamboman/nvim-lsp-installer" })
 	use("nvim-lua/plenary.nvim")
+	use("nvim-lua/popup.nvim")
 
 	-- cmp(Autocomplete plugin)
 	use("hrsh7th/cmp-nvim-lsp")
