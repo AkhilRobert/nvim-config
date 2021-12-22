@@ -16,3 +16,11 @@ o.scrolloff = 10
 o.sidescrolloff = 5
 
 vim.g.mapleader = ","
+
+-- barbar
+vim.g.bufferline = {
+	icon_separator_active = "",
+	icon_separator_inactive = "",
+	maximum_padding = 2,
+	closable = false,
+}
