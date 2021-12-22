@@ -6,7 +6,7 @@ local M = {}
 
 local sources = {
 	-- ts, js
-	formatter.prettier,
+	formatter.prettierd,
 
 	diagnostics.eslint_d.with({
 		condition = function(utils)
