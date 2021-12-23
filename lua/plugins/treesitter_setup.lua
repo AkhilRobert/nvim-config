@@ -13,7 +13,7 @@ M.setup = function()
 			enable = true,
 			disable = { "html" },
 			extended_mode = true,
-			colors = { "#EA66DC", "#FFD300", "#00A0FF" },
+			colors = { "#00A0FF", "#FFD300", "#EA66DC" },
 		},
 	})
 end
