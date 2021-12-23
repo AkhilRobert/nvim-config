@@ -25,7 +25,7 @@ packer.startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 		config = function()
-			local telescope = require("telescope")
+			local telescope = require("plugins.telescope")
 			telescope.setup()
 		end,
 	})
