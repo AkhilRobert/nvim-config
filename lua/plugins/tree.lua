@@ -10,6 +10,9 @@ M.setup = function()
 			enable = true,
 			update_cwd = true,
 		},
+		view = {
+			width = 40,
+		},
 	})
 end
 
