@@ -14,6 +14,7 @@ wo.relativenumber = true
 o.splitright = true
 o.scrolloff = 10
 o.sidescrolloff = 5
+o.mouse = "a"
 
 vim.g.mapleader = ","
 
