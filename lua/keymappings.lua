@@ -8,8 +8,9 @@ key_mapper("n", "<C-n>", ":nohl<CR>")
 key_mapper("n", "K", ":lua vim.lsp.buf.hover()<CR>")
 key_mapper("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
 key_mapper("n", "gi", ":lua vim.lsp.buf.references()<CR>")
-key_mapper("n", "<leader>ln", ":lua vim.lsp.buf.rename()<CR>")
-key_mapper("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>")
+key_mapper("n", "<leader>ln", "<cmd> Lspsaga rename<CR>")
+key_mapper("n", "<leader>la", "<cmd>Lspsaga code_action<CR>")
+key_mapper("n", "<leader>le", "<cmd>Lspsaga show_line_diagnostics<CR>")
 
 -- Telescope
 key_mapper("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>')

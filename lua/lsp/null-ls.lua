@@ -8,17 +8,10 @@ local sources = {
 	-- ts, js
 	formatter.prettierd,
 
-	diagnostics.eslint_d.with({
-		condition = function(utils)
-			return utils.root_has_file(".eslintrc.json") or utils.root_has_file(".eslintrc.js")
-		end,
-	}),
-	code_actions.eslint_d.with({
-		condition = function(utils)
-			return utils.root_has_file(".eslintrc.json") or utils.root_has_file(".eslintrc.js")
-		end,
-	}),
-	-- python
+	diagnostics.eslint_d,
+	code_actions.eslint_d,
+
+	--python
 	formatter.black,
 	formatter.isort,
 
@@ -28,6 +21,9 @@ local sources = {
 
 	-- lua
 	formatter.stylua,
+
+	--git
+	code_actions.gitsigns,
 }
 
 M.setup = function()

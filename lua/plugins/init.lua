@@ -5,12 +5,21 @@ packer.startup(function(use)
 
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")
+	use("ishan9299/nvim-solarized-lua")
 
 	-- Lsp
 	use("neovim/nvim-lspconfig")
 	use({ "williamboman/nvim-lsp-installer" })
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
+
+	use({
+		"tami5/lspsaga.nvim",
+		config = function()
+			local lspsaga = require("lspsaga")
+			lspsaga.setup({})
+		end,
+	})
 
 	-- cmp(Autocomplete plugin)
 	use("hrsh7th/cmp-nvim-lsp")
