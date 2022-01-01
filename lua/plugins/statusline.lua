@@ -19,7 +19,7 @@ end
 M.setup = function()
 	lualine.setup({
 		options = {
-			theme = "codedark",
+			theme = "solarized_dark",
 			component_separators = {},
 			section_separators = {},
 			disabled_filetypes = {},
@@ -27,7 +27,7 @@ M.setup = function()
 		},
 		sections = {
 			lualine_a = { "mode" },
-			lualine_b = { "branch", "diff", "diagnostics" },
+			lualine_b = { "branch", "diagnostics" },
 			lualine_c = { "filename" },
 			lualine_x = { progress },
 			lualine_y = {},
