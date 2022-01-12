@@ -10,7 +10,7 @@ M.setup = function()
 			additional_vim_regex_highlighting = false,
 		},
 		rainbow = {
-			enable = false,
+			enable = true,
 			disable = { "html" },
 			extended_mode = false,
 			colors = { "#00A0FF", "#FFD300", "#EA66DC" },

@@ -19,7 +19,7 @@ end
 M.setup = function()
 	lualine.setup({
 		options = {
-			theme = "solarized_dark",
+			-- theme = "one_dark",
 			component_separators = {},
 			section_separators = {},
 			disabled_filetypes = {},

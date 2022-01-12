@@ -5,7 +5,6 @@ packer.startup(function(use)
 
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")
-	use("ishan9299/nvim-solarized-lua")
 
 	-- Lsp
 	use("neovim/nvim-lspconfig")
