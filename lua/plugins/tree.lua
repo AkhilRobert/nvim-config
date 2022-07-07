@@ -1,8 +1,6 @@
 local nvim_tree = require("nvim-tree")
 local M = {}
 
-vim.g.nvim_tree_respect_buf_cwd = 1
-
 M.setup = function()
 	nvim_tree.setup({
 		update_cwd = true,
@@ -13,6 +11,7 @@ M.setup = function()
 		view = {
 			width = 40,
 		},
+		respect_buf_cwd = true,
 	})
 end
 

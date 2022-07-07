@@ -10,6 +10,7 @@ o.tabstop = 2
 o.softtabstop = 2
 o.shiftwidth = 2
 wo.number = true
+wo.relativenumber = true
 wo.cursorline = true
 o.splitright = true
 o.scrolloff = 10

@@ -16,7 +16,11 @@ packer.startup(function(use)
 		"tami5/lspsaga.nvim",
 		config = function()
 			local lspsaga = require("lspsaga")
-			lspsaga.setup({})
+			lspsaga.init_lsp_saga({
+				code_action_prompt = {
+					enable = false,
+				},
+			})
 		end,
 	})
 
