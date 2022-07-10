@@ -38,25 +38,30 @@ M.setup = function()
 				vim.fn["vsnip#anonymous"](args.body)
 			end,
 		},
-		mapping = {
-			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-			["<C-e>"] = cmp.mapping({
-				i = cmp.mapping.abort(),
-				c = cmp.mapping.close(),
-			}),
-			["<CR>"] = cmp.mapping.confirm({ select = true }),
-		},
+
+		mapping = cmp.mapping.preset.insert({
+			["<C-b>"] = cmp.mapping.scroll_docs(-4),
+			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-Space>"] = cmp.mapping.complete(),
+			["<C-e>"] = cmp.mapping.abort(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		}),
+
+		-- This determines the order in which the completion is show
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "buffer" },
 			{ name = "vsnip" },
 		}),
+
+		window = {
+			documentation = true,
+		},
+
 		formatting = {
 			format = function(entry, vim_item)
-				vim_item.kind = string.format("%s %s", cmp_kinds[vim_item.kind], vim_item.kind)
+				vim_item.kind = string.format("%s", cmp_kinds[vim_item.kind])
 
 				-- sources
 				vim_item.menu = ({

@@ -52,7 +52,7 @@ packer.startup(function(use)
 		end,
 	})
 
-	use("ChristianChiarulli/nvim-ts-rainbow")
+	use("p00f/nvim-ts-rainbow")
 
 	use({
 		"windwp/nvim-autopairs",
