@@ -118,8 +118,6 @@ packer.startup(function(use)
 		end,
 	})
 
-	use("nvim-lua/lsp-status.nvim")
-
 	use({
 		"romgrk/barbar.nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },

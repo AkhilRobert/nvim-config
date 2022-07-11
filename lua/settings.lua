@@ -2,6 +2,8 @@ local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
 
+local opt = vim.opt -- behaves like :set
+
 o.termguicolors = true
 o.syntax = "on"
 bo.smartindent = true

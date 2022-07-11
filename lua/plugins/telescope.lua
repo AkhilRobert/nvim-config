@@ -7,12 +7,14 @@ M.setup = function()
 			find_files = {
 				theme = "dropdown",
 				previewer = false,
+				file_ignore_patterns = { "node%_modules/.*" }
 			},
 			live_grep = {
 				theme = "dropdown",
 				layout_config = {
 					prompt_position = "bottom",
 				},
+				file_ignore_patterns = { "node%_modules/.*" }
 			},
 			buffers = {
 				theme = "dropdown",

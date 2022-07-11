@@ -20,7 +20,8 @@ local sources = {
 	diagnostics.revive,
 
 	-- lua
-	formatter.stylua,
+	-- No longer needed as it comes default
+	-- formatter.stylua,
 
 	--git
 	code_actions.gitsigns,
@@ -31,6 +32,7 @@ M.setup = function()
 		sources = sources,
 		on_attach = function(client)
 			if client.resolved_capabilities.document_formatting then
+				-- TODO: replace with new autocmd api
 				vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 			end
 		end,

@@ -9,7 +9,7 @@ M.setup = function()
 			update_cwd = true,
 		},
 		view = {
-			width = 40,
+			width = 60,
 		},
 		respect_buf_cwd = true,
 	})
