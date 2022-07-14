@@ -54,13 +54,15 @@ packer.startup(function(use)
 
 	use("p00f/nvim-ts-rainbow")
 
+	-- Autopairs
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
-			require('windwp/nvim-autopairs')
+			local autopairs = require('plugins.autopairs')
+			autopairs.setup()
 		end,
 	})
-	use("windwp/nvim-ts-autotag")
+	use { "windwp/nvim-ts-autotag", event = "InsertEnter" }
 
 	-- Formatter & Linter
 	use({
