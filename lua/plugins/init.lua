@@ -57,8 +57,7 @@ packer.startup(function(use)
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
-			local autopairs = require("plugins.autopairs")
-			autopairs.setup()
+			require('windwp/nvim-autopairs')
 		end,
 	})
 	use("windwp/nvim-ts-autotag")
