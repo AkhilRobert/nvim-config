@@ -49,13 +49,12 @@ M.setup = function()
 		}),
 
 		-- This determines the order in which the completion is show
-		sources = cmp.config.sources({
+		sources = {
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "buffer" },
 			{ name = "vsnip" },
-		}),
-
+		},
 
 		window = {
 			documentation = true,

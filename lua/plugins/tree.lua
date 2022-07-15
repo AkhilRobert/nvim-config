@@ -1,17 +1,9 @@
-local nvim_tree = require("nvim-tree")
+local neo_tree = require('neo-tree')
 local M = {}
 
 M.setup = function()
-	nvim_tree.setup({
-		update_cwd = true,
-		update_focused_file = {
-			enable = true,
-			update_cwd = true,
-		},
-		view = {
-			width = 60,
-		},
-		respect_buf_cwd = true,
+	neo_tree.setup({
+		hijack_netrw_behavior = "open_default"
 	})
 end
 

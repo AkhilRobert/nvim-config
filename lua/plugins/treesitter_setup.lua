@@ -11,7 +11,6 @@ M.setup = function()
 		},
 		rainbow = {
 			enable = true,
-			disable = { "html" },
 			extended_mode = false,
 			colors = { "#00A0FF", "#FFD300", "#EA66DC" },
 		},

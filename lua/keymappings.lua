@@ -25,4 +25,4 @@ key_mapper("n", "<leader>bn", ":bnext<CR>")
 key_mapper("n", "<leader>bp", ":bprevious<CR>")
 
 -- NvimTree
-key_mapper("n", "<leader>e", ":NvimTreeToggle<CR>")
+key_mapper("n", "<leader>e", ":NeoTreeFloatToggle<CR>")

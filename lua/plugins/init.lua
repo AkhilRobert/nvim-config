@@ -25,10 +25,15 @@ packer.startup(function(use)
 	})
 
 	-- cmp(Autocomplete plugin)
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/nvim-cmp")
-	use("onsails/lspkind-nvim")
+	use {
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer"
+		},
+	}
+
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 
@@ -62,7 +67,7 @@ packer.startup(function(use)
 			autopairs.setup()
 		end,
 	})
-	use { "windwp/nvim-ts-autotag", event = "InsertEnter" }
+	use { "windwp/nvim-ts-autotag" }
 
 	-- Formatter & Linter
 	use({
@@ -89,16 +94,20 @@ packer.startup(function(use)
 		end,
 	})
 
-	-- Editor
-	use({
-		"kyazdani42/nvim-tree.lua",
+	use {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
 		requires = {
-			"kyazdani42/nvim-web-devicons", -- optional, for file icon
+			"nvim-lua/plenary.nvim",
+			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
 		},
 		config = function()
-			require("plugins.tree").setup()
-		end,
-	})
+			local tree = require('plugins.tree')
+			tree.setup()
+		end
+	}
+
 	use({
 		"nvim-lualine/lualine.nvim",
 		config = function()
@@ -108,16 +117,6 @@ packer.startup(function(use)
 	})
 
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
-
-	use({
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup({
-				patterns = { "package.json", "pyproject.toml" },
-				detection_methods = { "pattern", "lsp" },
-			})
-		end,
-	})
 
 	use({
 		"romgrk/barbar.nvim",
