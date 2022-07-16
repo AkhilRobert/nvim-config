@@ -18,5 +18,6 @@ o.splitright = true
 o.scrolloff = 10
 o.sidescrolloff = 5
 o.mouse = "a"
+o.signcolumn = "yes"
 
 vim.g.mapleader = ","
