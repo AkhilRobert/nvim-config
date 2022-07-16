@@ -26,6 +26,9 @@ packer.startup(function(use)
 		end,
 	})
 
+	-- Typescript
+	use "jose-elias-alvarez/typescript.nvim"
+
 	-- cmp(Autocomplete plugin)
 	use {
 		"hrsh7th/nvim-cmp",
@@ -118,10 +121,5 @@ packer.startup(function(use)
 		end,
 	})
 
-	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
-	use({
-		"romgrk/barbar.nvim",
-		requires = { "kyazdani42/nvim-web-devicons" },
-	})
 end)

@@ -1,32 +1,32 @@
-local lsp = require('lspconfig')
-local utils = require('nvim-lsp-ts-utils')
+local typescript = require('typescript')
 
 local M = {}
 
+-- Creates autocmd
+local register_cmd = function()
+	local group = vim.api.nvim_create_augroup("OrganizeImports", { clear = true })
+
+	-- Runs organizeImports on file save
+	vim.api.nvim_create_autocmd('BufWritePre', {
+		pattern = { "*.ts", "*.tsx" },
+		callback = function()
+			typescript.actions.organizeImports({ sync = true })
+		end,
+		group = group
+	})
+
+end
+
 M.setup = function()
-	lsp.tsserver.setup {
-		init_options = utils.init_options,
-		on_attach = function(client, buffer)
-			-- disables language server formatting
-			-- formatting is handled by
-			client.resolved_capabilities.document_formatting = false
+	register_cmd()
 
-			utils.setup({
-				debug = false,
-				disable_commands = false,
-				enable_import_on_completion = false,
-				auto_inlay_hints = false,
-			})
-
-			-- required to fix code action ranges and filter diagnostics
-			utils.setup_client(client)
-
-			local opt = { silent = true }
-			vim.api.nvim_buf_set_keymap(buffer, "n", "gs", ":TSLspOrganize<CR>", opt)
-			vim.api.nvim_buf_set_keymap(buffer, "n", "gr", ":TSLspRenameFile<CR>", opt)
-			vim.api.nvim_buf_set_keymap(buffer, "n", "gi", ":TSLspImportAll<CR>", opt)
-		end
-	}
+	typescript.setup({
+		server = {
+			on_attach = function(client)
+				client.resolved_capabilities.document_formatting = false
+			end
+		}
+	})
 end
 
 return M

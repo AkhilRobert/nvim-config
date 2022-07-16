@@ -19,10 +19,9 @@ key_mapper("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR
 key_mapper("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>')
 key_mapper("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
 
--- Buffer
-key_mapper("n", "<leader>bc", ":BufferClose<CR>")
-key_mapper("n", "<leader>bn", ":bnext<CR>")
-key_mapper("n", "<leader>bp", ":bprevious<CR>")
 
 -- NvimTree
 key_mapper("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
+
+-- Typescript
+key_mapper("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")

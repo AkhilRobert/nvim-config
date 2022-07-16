@@ -20,11 +20,3 @@ o.sidescrolloff = 5
 o.mouse = "a"
 
 vim.g.mapleader = ","
-
--- barbar
-vim.g.bufferline = {
-	icon_separator_active = "",
-	icon_separator_inactive = "",
-	maximum_padding = 2,
-	closable = true,
-}
