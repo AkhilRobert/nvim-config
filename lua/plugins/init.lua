@@ -6,11 +6,13 @@ packer.startup(function(use)
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")
 
+	-- Utils
+	use("nvim-lua/plenary.nvim")
+	use("nvim-lua/popup.nvim")
+
 	-- Lsp
 	use("neovim/nvim-lspconfig")
 	use({ "williamboman/nvim-lsp-installer" })
-	use("nvim-lua/plenary.nvim")
-	use("nvim-lua/popup.nvim")
 
 	use({
 		"tami5/lspsaga.nvim",
