@@ -5,8 +5,7 @@ local M = {}
 M.setup = function() neo_tree.setup({
 		hijack_netrw_behavior = "open_default",
 		window = {
-			position = "right",
-			width = 60
+			width = 40
 		},
 		default_component_configs = {
 			icon = {

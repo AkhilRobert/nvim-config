@@ -6,8 +6,10 @@ local M = {}
 
 local sources = {
 	-- ts, js
+	-- prettier
 	formatter.prettierd,
 
+	-- eslint
 	diagnostics.eslint_d,
 	code_actions.eslint_d,
 
@@ -19,24 +21,33 @@ local sources = {
 	formatter.gofumpt,
 	diagnostics.revive,
 
-	-- lua
-	-- No longer needed as it comes default
-	-- formatter.stylua,
-
 	--git
 	code_actions.gitsigns,
 }
 
+local on_attach = function()
+	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+	return function(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+					vim.lsp.buf.formatting_sync()
+				end,
+			})
+		end
+	end
+end
+
 M.setup = function()
 	null_ls.setup({
 		sources = sources,
-		on_attach = function(client)
-			if client.resolved_capabilities.document_formatting then
-				-- TODO: replace with new autocmd api
-				vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-			end
-		end,
+		on_attach = on_attach()
 	})
 end
+
 
 return M

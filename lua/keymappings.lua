@@ -25,3 +25,4 @@ key_mapper("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
 
 -- Typescript
 key_mapper("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
+key_mapper("n", "<leader>to", ":TypescriptOrganizeImports<CR>")
