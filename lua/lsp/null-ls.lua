@@ -1,8 +1,25 @@
 local null_ls = require("null-ls")
+
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
+
 local M = {}
+
+-- Fixes eslint no configuration found
+-- only runs if there is eslint present installed locally rather than using
+-- the global one.
+local eslint_d = function()
+
+	local project_local_bin = "node_modules/.bin/eslint"
+
+	return null_ls.builtins.diagnostics.eslint_d.with({
+		condition = function(utils)
+			return utils.root_has_file(project_local_bin) and project_local_bin
+		end
+	})
+
+end
 
 local sources = {
 	-- ts, js
@@ -10,7 +27,8 @@ local sources = {
 	formatter.prettierd,
 
 	-- eslint
-	diagnostics.eslint_d,
+	-- diagnostics.eslint_d,
+	eslint_d(),
 	code_actions.eslint_d,
 
 	--python

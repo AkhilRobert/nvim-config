@@ -67,6 +67,7 @@ packer.startup(function(use)
 			treesitter.setup()
 		end,
 	})
+	use('nvim-treesitter/playground')
 
 	use("p00f/nvim-ts-rainbow")
 
