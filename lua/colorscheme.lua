@@ -1,2 +1,5 @@
-vim.g.vscode_style = "dark"
-vim.cmd([[colorscheme vscode]])
+vim.o.background = "dark"
+
+require('vscode').setup {
+	italic_comments = true
+}
