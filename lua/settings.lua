@@ -21,3 +21,11 @@ o.mouse = "a"
 o.signcolumn = "yes"
 
 vim.g.mapleader = ","
+
+-- Highlight text on yank
+local yank_highlight = vim.api.nvim_create_augroup('yank_highlight', { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	pattern = { "*" },
+	command = "lua vim.highlight.on_yank()",
+	group = yank_highlight
+})
