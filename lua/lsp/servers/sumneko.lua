@@ -1,4 +1,5 @@
 local lsp = require('lspconfig')
+local handler = require('lsp.handlers')
 
 local M = {}
 
@@ -17,6 +18,7 @@ M.setup = function()
 				},
 			},
 		},
+		capabilities = handler.capabilities
 	}
 end
 

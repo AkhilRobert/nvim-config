@@ -39,8 +39,14 @@ packer.startup(function(use)
 		},
 	}
 
-	use("hrsh7th/cmp-vsnip")
-	use("hrsh7th/vim-vsnip")
+	-- snippet engine
+	use {
+		"L3MON4D3/LuaSnip",
+		config = function()
+			require('plugins.snippets').setup()
+		end
+	}
+	use("saadparwaiz1/cmp_luasnip")
 
 	-- Telescope
 	use({

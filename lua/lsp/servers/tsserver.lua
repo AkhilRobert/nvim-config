@@ -1,4 +1,5 @@
 local typescript = require('typescript')
+local handler = require('lsp.handlers')
 
 local M = {}
 
@@ -8,7 +9,8 @@ M.setup = function()
 		server = {
 			on_attach = function(client)
 				client.resolved_capabilities.document_formatting = false
-			end
+			end,
+			capabilities = handler.capabilities
 		}
 	})
 end

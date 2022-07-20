@@ -1,5 +1,6 @@
 ---@diagnostic disable: redundant-parameter
 local cmp = require("cmp")
+local snippet = require('luasnip')
 local M = {}
 
 -- Make sure to have codicons font installed for icons to be shown
@@ -35,7 +36,7 @@ M.setup = function()
 	cmp.setup({
 		snippet = {
 			expand = function(args)
-				vim.fn["vsnip#anonymous"](args.body)
+				snippet.lsp_expand(args.body)
 			end,
 		},
 
@@ -53,7 +54,7 @@ M.setup = function()
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "buffer" },
-			{ name = "vsnip" },
+			{ name = "luasnip" },
 		},
 
 		window = {
