@@ -5,23 +5,19 @@ M.setup = function()
 	telescope.setup({
 		pickers = {
 			find_files = {
-				theme = "dropdown",
-				previewer = false,
+				theme = "ivy",
 				file_ignore_patterns = { "node%_modules/.*" }
 			},
 			live_grep = {
-				theme = "dropdown",
-				layout_config = {
-					prompt_position = "bottom",
-				},
+				theme = "ivy",
 				file_ignore_patterns = { "node%_modules/.*" }
 			},
 			buffers = {
-				theme = "dropdown",
-				layout_config = {
-					prompt_position = "bottom",
-				},
+				theme = "ivy",
 			},
+			diagnostics = {
+				theme = "ivy",
+			}
 		},
 	})
 end
