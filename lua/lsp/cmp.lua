@@ -34,6 +34,11 @@ local cmp_kinds = {
 
 M.setup = function()
 	cmp.setup({
+		completion = {
+			-- selects the first value of the completion menu automatically
+			completeopt = 'menu,menuone,noinsert'
+		},
+
 		snippet = {
 			expand = function(args)
 				snippet.lsp_expand(args.body)

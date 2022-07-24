@@ -1,8 +1,8 @@
 local packer = require("packer")
 
-packer.startup(function(use)
+packer.startup({ function(use)
 	use({ "wbthomason/packer.nvim", opt = true })
-
+	--
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")
 
@@ -15,14 +15,10 @@ packer.startup(function(use)
 	use({ "williamboman/nvim-lsp-installer" })
 
 	use({
-		"tami5/lspsaga.nvim",
+		"glepnir/lspsaga.nvim",
 		config = function()
-			local lspsaga = require("lspsaga")
-			lspsaga.init_lsp_saga({
-				code_action_prompt = {
-					enable = false,
-				},
-			})
+			local saga = require('plugins.saga')
+			saga.setup()
 		end,
 	})
 
@@ -109,6 +105,7 @@ packer.startup(function(use)
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
+		cmd = "Neotree",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
@@ -128,5 +125,12 @@ packer.startup(function(use)
 		end,
 	})
 
-
-end)
+end,
+	config = {
+		display = {
+			open_fn = function()
+				return require('packer.util').float({ border = true })
+			end
+		}
+	}
+})
