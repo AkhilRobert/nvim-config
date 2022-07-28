@@ -8,6 +8,14 @@ M.setup = function() neo_tree.setup({
 			icon = {
 				folder_closed = '',
 				folder_open   = ''
+			},
+			indent = {
+				indent_size = 3
+			}
+		},
+		git_status = {
+			symbols = {
+				modified = ""
 			}
 		}
 	})

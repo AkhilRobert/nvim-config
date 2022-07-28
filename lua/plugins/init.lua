@@ -22,6 +22,11 @@ packer.startup({ function(use)
 		end,
 	})
 
+	use { "j-hui/fidget.nvim", config = function()
+		local fidget = require('fidget')
+		fidget.setup()
+	end }
+
 	-- Typescript
 	use "jose-elias-alvarez/typescript.nvim"
 

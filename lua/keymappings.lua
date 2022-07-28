@@ -22,8 +22,12 @@ key_mapper("n", "<leader>fd", ':lua require("telescope.builtin").diagnostics()<C
 
 
 -- NvimTree
-key_mapper("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
+key_mapper("n", "<leader>e", ":Neotree toggle float reveal_force_cwd<CR>")
 
 -- Typescript
 key_mapper("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
-key_mapper("n", "<leader>to", ":TypescriptOrganizeImports<CR>")
+key_mapper("n", "<leader>to", function()
+	local typescript = require('typescript')
+	typescript.actions.organizeImports()
+	typescript.actions.removeUnused()
+end)

@@ -56,10 +56,10 @@ M.setup = function()
 
 		-- This determines the order in which the completion is show
 		sources = {
-			{ name = "nvim_lsp" },
-			{ name = "path" },
-			{ name = "buffer" },
 			{ name = "luasnip" },
+			{ name = "nvim_lsp" },
+			{ name = "buffer" },
+			{ name = "path" },
 		},
 
 		window = {
