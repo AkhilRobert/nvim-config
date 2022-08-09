@@ -1,33 +1,39 @@
-local key_mapper = function(mode, key, result)
+local map = function(mode, key, result)
 	vim.keymap.set(mode, key, result, { noremap = true, silent = true })
 end
 
-key_mapper("n", "<C-n>", ":nohl<CR>")
+map("n", "<C-n>", ":nohl<CR>")
 
 -- LSP
-key_mapper("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
-key_mapper("n", "gi", ":lua vim.lsp.buf.references()<CR>")
-key_mapper("n", "K", require('lspsaga.hover').render_hover_doc)
-key_mapper("n", "<leader>ln", require('lspsaga.rename').lsp_rename)
-key_mapper("n", "<leader>la", require('lspsaga.codeaction').code_action)
-key_mapper("n", "<leader>ld", require('lspsaga.diagnostic').show_line_diagnostics)
-key_mapper("n", "<leader>s", "<cmd>vsplit<CR>")
-key_mapper("n", "<leader>S", "<cmd>split<CR>")
+map("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
+map("n", "gi", ":lua vim.lsp.buf.references()<CR>")
+map("n", "K", require('lspsaga.hover').render_hover_doc)
+map("n", "<leader>ln", require('lspsaga.rename').lsp_rename)
+map("n", "<leader>la", require('lspsaga.codeaction').code_action)
+map("n", "<leader>ld", require('lspsaga.diagnostic').show_line_diagnostics)
+map("n", "ss", "<cmd>vsplit<CR>")
+map("n", "sS", "<cmd>split<CR>")
 
 -- Telescope
-key_mapper("n", "<leader>ff", require("telescope.builtin").find_files)
-key_mapper("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>')
-key_mapper("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
-key_mapper("n", "<leader>fd", ':lua require("telescope.builtin").diagnostics()<CR>')
+map("n", "ff", require("telescope.builtin").find_files)
+map("n", "fg", ':lua require("telescope.builtin").live_grep()<CR>')
+map("n", "fb", ':lua require("telescope.builtin").buffers()<CR>')
+map("n", "fd", ':lua require("telescope.builtin").diagnostics()<CR>')
 
 
 -- NvimTree
-key_mapper("n", "<leader>e", ":Neotree toggle float reveal_force_cwd<CR>")
+map("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
 
 -- Typescript
-key_mapper("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
-key_mapper("n", "<leader>to", function()
+map("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
+map("n", "<leader>to", function()
 	local typescript = require('typescript')
 	typescript.actions.organizeImports()
 	typescript.actions.removeUnused()
+end)
+
+-- luasnip
+map({ "i", "s" }, '<C-i>', function()
+	print('This keybinding is running')
+	require('luasnip').jump(1)
 end)

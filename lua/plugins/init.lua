@@ -2,9 +2,12 @@ local packer = require("packer")
 
 packer.startup({ function(use)
 	use({ "wbthomason/packer.nvim", opt = true })
-	--
+
+	use "lukas-reineke/indent-blankline.nvim"
+
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")
+	use 'marko-cerovac/material.nvim'
 
 	-- Utils
 	use("nvim-lua/plenary.nvim")

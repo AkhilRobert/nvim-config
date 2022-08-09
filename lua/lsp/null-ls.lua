@@ -1,4 +1,5 @@
 local null_ls = require("null-ls")
+local file_utils = require("utils")
 
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
@@ -10,7 +11,6 @@ local M = {}
 -- only runs if there is eslint present installed locally rather than using
 -- the global one.
 local eslint_d = function()
-
 	local project_local_bin = "node_modules/.bin/eslint"
 
 	return null_ls.builtins.diagnostics.eslint_d.with({
@@ -18,7 +18,22 @@ local eslint_d = function()
 			return utils.root_has_file(project_local_bin) and project_local_bin
 		end
 	})
+end
 
+local revive = function()
+	local config_filename = 'revive.toml'
+	local args = { "-formatter", "json" }
+	local exists = file_utils.file_exists_cwd(config_filename)
+	if exists then
+		table.insert(args, "-config")
+		table.insert(args, config_filename)
+	end
+
+	table.insert(args, "./...")
+
+	return diagnostics.revive.with({
+		args = args
+	})
 end
 
 local sources = {
@@ -37,7 +52,8 @@ local sources = {
 
 	-- go
 	formatter.gofumpt,
-	diagnostics.revive,
+	formatter.goimports,
+	revive(),
 
 	--git
 	code_actions.gitsigns,
@@ -45,18 +61,17 @@ local sources = {
 
 local on_attach = function()
 	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-	return function(client, bufnr)
-		if client.supports_method("textDocument/formatting") or client.resolved_capabilities.document_formatting then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-					vim.lsp.buf.formatting_sync()
-				end,
-			})
-		end
+	return function(_, bufnr)
+		-- Autocmd for formatting on save
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+				vim.lsp.buf.formatting_sync()
+			end,
+		})
 	end
 end
 

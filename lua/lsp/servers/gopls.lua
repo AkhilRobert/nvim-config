@@ -21,7 +21,6 @@ M.snippets = function()
 			t("}")
 		})
 	}
-
 	return table
 end
 
