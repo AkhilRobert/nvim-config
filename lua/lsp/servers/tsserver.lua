@@ -1,4 +1,9 @@
-local typescript = require('typescript')
+-- local typescript = require('typescript')
+local ok, typescript = pcall(require, 'typescript')
+if not ok then
+	return
+end
+
 local handler = require('lsp.handlers')
 local ls = require('luasnip')
 

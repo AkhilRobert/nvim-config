@@ -3,7 +3,6 @@ local M = {}
 
 
 M.setup = function() neo_tree.setup({
-		hijack_netrw_behavior = "open_default",
 		default_component_configs = {
 			icon = {
 				folder_closed = '',
@@ -17,6 +16,10 @@ M.setup = function() neo_tree.setup({
 			symbols = {
 				modified = ""
 			}
+		},
+		window = {
+			position = "right",
+			width = 60
 		}
 	})
 end

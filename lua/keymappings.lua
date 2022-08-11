@@ -25,15 +25,16 @@ map("n", "fd", ':lua require("telescope.builtin").diagnostics()<CR>')
 map("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
 
 -- Typescript
-map("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
-map("n", "<leader>to", function()
-	local typescript = require('typescript')
-	typescript.actions.organizeImports()
-	typescript.actions.removeUnused()
-end)
+local ok, typescript = pcall(require, 'typescript')
+if ok then
+	map("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
+	map("n", "<leader>to", function()
+		typescript.actions.organizeImports()
+		typescript.actions.removeUnused()
+	end)
+end
 
 -- luasnip
 map({ "i", "s" }, '<C-i>', function()
-	print('This keybinding is running')
 	require('luasnip').jump(1)
 end)

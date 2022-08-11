@@ -1,13 +1,15 @@
 local packer = require("packer")
 
+local U = require('utils')
+
 packer.startup({ function(use)
 	use({ "wbthomason/packer.nvim", opt = true })
+	use { 'dstein64/vim-startuptime' }
 
 	use "lukas-reineke/indent-blankline.nvim"
 
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")
-	use 'marko-cerovac/material.nvim'
 
 	-- Utils
 	use("nvim-lua/plenary.nvim")
@@ -25,13 +27,23 @@ packer.startup({ function(use)
 		end,
 	})
 
-	use { "j-hui/fidget.nvim", config = function()
-		local fidget = require('fidget')
-		fidget.setup()
-	end }
+	use {
+		"j-hui/fidget.nvim",
+		config = function()
+			local fidget = require('fidget')
+			fidget.setup()
+		end
+	}
 
 	-- Typescript
-	use "jose-elias-alvarez/typescript.nvim"
+	use {
+		"jose-elias-alvarez/typescript.nvim",
+		ft = { "typescript", "typescriptreact", "javascript" },
+		config = function()
+			local tsserver = require('lsp.servers.tsserver')
+			tsserver.setup()
+		end
+	}
 
 	-- cmp(Autocomplete plugin)
 	use {
@@ -46,9 +58,6 @@ packer.startup({ function(use)
 	-- snippet engine
 	use {
 		"L3MON4D3/LuaSnip",
-		config = function()
-			require('plugins.snippets').setup()
-		end
 	}
 	use("saadparwaiz1/cmp_luasnip")
 
@@ -105,8 +114,10 @@ packer.startup({ function(use)
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
-			local gitsigns = require("plugins.gitsigns")
-			gitsigns.setup()
+			local ok, gitsigns = pcall(require, "plugins.gitsigns")
+			if ok then
+				gitsigns.setup()
+			end
 		end,
 	})
 
@@ -134,6 +145,7 @@ packer.startup({ function(use)
 	})
 
 end,
+
 	config = {
 		display = {
 			open_fn = function()

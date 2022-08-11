@@ -1,5 +1,5 @@
 local null_ls = require("null-ls")
-local file_utils = require("utils")
+local U = require("utils")
 
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
@@ -23,7 +23,7 @@ end
 local revive = function()
 	local config_filename = 'revive.toml'
 	local args = { "-formatter", "json" }
-	local exists = file_utils.file_exists_cwd(config_filename)
+	local exists = U.file_exists_cwd(config_filename)
 	if exists then
 		table.insert(args, "-config")
 		table.insert(args, config_filename)

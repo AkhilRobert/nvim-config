@@ -4,7 +4,6 @@ local M = {}
 M.setup = function()
 	lualine.setup({
 		options = {
-			-- theme = "one_dark",
 			component_separators = {},
 			section_separators = {},
 			disabled_filetypes = {},
