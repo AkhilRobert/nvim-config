@@ -11,7 +11,6 @@ require('indent_blankline').setup({
 	show_current_context = true,
 })
 
-require("nvim-lsp-installer").setup {}
 require("lsp")
 require("colorscheme")
 require('snippets').setup()

@@ -17,7 +17,11 @@ packer.startup({ function(use)
 
 	-- Lsp
 	use("neovim/nvim-lspconfig")
-	use({ "williamboman/nvim-lsp-installer" })
+	use { "williamboman/mason.nvim", 
+		config = function() 
+			require('mason').setup()
+		end 
+	}
 
 	use({
 		"glepnir/lspsaga.nvim",
