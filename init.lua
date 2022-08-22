@@ -10,7 +10,6 @@ require('indent_blankline').setup({
 	use_treesitter = true,
 	show_current_context = true,
 })
-
-require("lsp")
 require("colorscheme")
+require("lsp")
 require('snippets').setup()

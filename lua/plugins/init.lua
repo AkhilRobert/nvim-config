@@ -17,10 +17,10 @@ packer.startup({ function(use)
 
 	-- Lsp
 	use("neovim/nvim-lspconfig")
-	use { "williamboman/mason.nvim", 
-		config = function() 
+	use { "williamboman/mason.nvim",
+		config = function()
 			require('mason').setup()
-		end 
+		end
 	}
 
 	use({
@@ -56,8 +56,10 @@ packer.startup({ function(use)
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer"
+
 		},
 	}
+	use { "onsails/lspkind.nvim" }
 
 	-- snippet engine
 	use {
@@ -85,8 +87,14 @@ packer.startup({ function(use)
 		end,
 	})
 	use('nvim-treesitter/playground')
-
 	use("p00f/nvim-ts-rainbow")
+	use {
+		'lewis6991/spellsitter.nvim',
+		config = function()
+			require('spellsitter').setup()
+		end
+	} -- Fixes showing spelling errors on language keywords
+
 
 	-- Autopairs
 	use({

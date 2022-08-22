@@ -12,7 +12,7 @@ M.setup = function()
 		rainbow = {
 			enable = true,
 			extended_mode = false,
-			colors = { "#00A0FF", "#FFD300", "#EA66DC" },
+			colors = { "#FFD300", "#00A0FF", "#FFD300" }
 		},
 	})
 end

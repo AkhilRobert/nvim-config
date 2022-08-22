@@ -42,7 +42,6 @@ local sources = {
 	formatter.prettierd,
 
 	-- eslint
-	-- diagnostics.eslint_d,
 	eslint_d(),
 	code_actions.eslint_d,
 
@@ -55,8 +54,14 @@ local sources = {
 	formatter.goimports,
 	revive(),
 
+	-- rust
+	formatter.rustfmt,
+
+	-- spelling
+	diagnostics.codespell
+
 	--git
-	code_actions.gitsigns,
+	-- code_actions.gitsigns,
 }
 
 local on_attach = function()
@@ -81,6 +86,5 @@ M.setup = function()
 		on_attach = on_attach()
 	})
 end
-
 
 return M

@@ -8,7 +8,7 @@ map("n", "<C-n>", ":nohl<CR>")
 map("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
 map("n", "gi", ":lua vim.lsp.buf.references()<CR>")
 map("n", "K", require('lspsaga.hover').render_hover_doc)
-map("n", "<leader>ln", require('lspsaga.rename').lsp_rename)
+map("n", "<leader>ln", "<cmd>Lspsaga rename <CR>")
 map("n", "<leader>la", require('lspsaga.codeaction').code_action)
 map("n", "<leader>ld", require('lspsaga.diagnostic').show_line_diagnostics)
 map("n", "ss", "<cmd>vsplit<CR>")
@@ -21,8 +21,13 @@ map("n", "fb", ':lua require("telescope.builtin").buffers()<CR>')
 map("n", "fd", ':lua require("telescope.builtin").diagnostics()<CR>')
 
 
--- NvimTree
+-- Neotree
 map("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
+
+-- luasnip
+map({ "i", "s" }, '<M-i>', function()
+	require('luasnip').jump(1)
+end)
 
 -- Typescript
 local ok, typescript = pcall(require, 'typescript')
@@ -33,8 +38,3 @@ if ok then
 		typescript.actions.removeUnused()
 	end)
 end
-
--- luasnip
-map({ "i", "s" }, '<C-i>', function()
-	require('luasnip').jump(1)
-end)

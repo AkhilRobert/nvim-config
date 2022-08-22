@@ -2,7 +2,7 @@ local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
 
--- local opt = vim.opt -- behaves like :set
+local opt = vim.opt -- behaves like :set
 
 o.termguicolors = true
 o.syntax = "on"
@@ -19,6 +19,10 @@ o.scrolloff = 10
 o.sidescrolloff = 5
 o.mouse = "a"
 o.signcolumn = "yes"
+
+-- Spelling
+-- opt.spell = true
+-- opt.spelllang = { 'en_us' }
 
 vim.g.mapleader = ","
 
