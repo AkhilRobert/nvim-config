@@ -24,10 +24,6 @@ map("n", "fd", ':lua require("telescope.builtin").diagnostics()<CR>')
 -- Neotree
 map("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
 
--- luasnip
-map({ "i", "s" }, '<M-i>', function()
-	require('luasnip').jump(1)
-end)
 
 -- Typescript
 local ok, typescript = pcall(require, 'typescript')
