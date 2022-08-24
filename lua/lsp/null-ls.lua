@@ -36,6 +36,12 @@ local revive = function()
 	})
 end
 
+local codespell = function()
+	return diagnostics.codespell.with({
+		extra_args = { "-I", "/Users/akhilrobert/Documents/dictionary.txt" }
+	})
+end
+
 local sources = {
 	-- ts, js
 	-- prettier
@@ -58,7 +64,7 @@ local sources = {
 	formatter.rustfmt,
 
 	-- spelling
-	diagnostics.codespell
+	codespell()
 
 	--git
 	-- code_actions.gitsigns,
