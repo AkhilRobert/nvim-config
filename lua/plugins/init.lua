@@ -1,6 +1,5 @@
 local packer = require("packer")
 
-local U = require('utils')
 
 packer.startup({ function(use)
 	use({ "wbthomason/packer.nvim", opt = true })
@@ -25,6 +24,7 @@ packer.startup({ function(use)
 
 	use({
 		"glepnir/lspsaga.nvim",
+		cmd = "Lspsaga",
 		config = function()
 			local saga = require('plugins.saga')
 			saga.setup()

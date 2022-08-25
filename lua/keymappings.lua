@@ -5,12 +5,13 @@ end
 map("n", "<C-n>", ":nohl<CR>")
 
 -- LSP
-map("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
-map("n", "gi", ":lua vim.lsp.buf.references()<CR>")
-map("n", "K", require('lspsaga.hover').render_hover_doc)
+local lsp_buf = vim.lsp.buf;
+map("n", "gd", lsp_buf.definition)
+map("n", "gi", lsp_buf.references)
+map("n", "K", "<cmd> Lspsaga hover_doc <CR>")
 map("n", "<leader>ln", "<cmd>Lspsaga rename <CR>")
-map("n", "<leader>la", require('lspsaga.codeaction').code_action)
-map("n", "<leader>ld", require('lspsaga.diagnostic').show_line_diagnostics)
+map("n", "<leader>la", "<cmd>Lspsaga code_action <CR>")
+map("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics <CR>")
 map("n", "ss", "<cmd>vsplit<CR>")
 map("n", "sS", "<cmd>split<CR>")
 
