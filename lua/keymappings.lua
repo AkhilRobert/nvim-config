@@ -16,11 +16,10 @@ map("n", "ss", "<cmd>vsplit<CR>")
 map("n", "sS", "<cmd>split<CR>")
 
 -- Telescope
-map("n", "ff", require("telescope.builtin").find_files)
-map("n", "fg", ':lua require("telescope.builtin").live_grep()<CR>')
-map("n", "fb", ':lua require("telescope.builtin").buffers()<CR>')
-map("n", "fd", ':lua require("telescope.builtin").diagnostics()<CR>')
-
+map("n", "ff", "<cmd>Telescope find_files<CR>")
+map("n", "fg", "<cmd>Telescope live_grep<CR>")
+map("n", "fb", "<cmd>Telescope buffers<CR>")
+map("n", "fd", "<cmd>Telescope diagnostics<CR>")
 
 -- Neotree
 map("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
