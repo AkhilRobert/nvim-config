@@ -5,6 +5,7 @@ if not ok then
 end
 
 local handler = require('lsp.handlers')
+local util = require('lua.utils')
 
 local M = {}
 
@@ -14,6 +15,14 @@ M.setup = function()
 		server = {
 			on_attach = function(client)
 				client.resolved_capabilities.document_formatting = false
+
+				-- Keymappings
+				util.map("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
+				util.map("n", "<leader>to", function()
+					typescript.actions.organizeImports()
+					typescript.actions.removeUnused()
+				end)
+
 			end,
 			capabilities = handler.capabilities
 		}

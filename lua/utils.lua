@@ -11,4 +11,8 @@ M.file_exists_cwd = function(filename)
 	return true
 end
 
+M.map = function(mode, key, result)
+	vim.keymap.set(mode, key, result, { noremap = true, silent = true })
+end
+
 return M
