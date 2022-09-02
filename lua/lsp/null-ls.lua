@@ -64,7 +64,7 @@ local sources = {
 	formatter.rustfmt,
 
 	-- spelling
-	codespell()
+	codespell(),
 
 	--git
 	code_actions.gitsigns,
