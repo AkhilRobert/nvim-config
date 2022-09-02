@@ -67,7 +67,7 @@ local sources = {
 	codespell()
 
 	--git
-	-- code_actions.gitsigns,
+	code_actions.gitsigns,
 }
 
 local on_attach = function()

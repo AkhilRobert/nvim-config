@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 -- local typescript = require('typescript')
 local ok, typescript = pcall(require, 'typescript')
 if not ok then
@@ -5,7 +6,7 @@ if not ok then
 end
 
 local handler = require('lsp.handlers')
-local util = require('lua.utils')
+local util = require('utils')
 
 local M = {}
 
