@@ -9,9 +9,16 @@ M.setup = function()
 			enable = true,
 			additional_vim_regex_highlighting = false,
 		},
+		indent = {
+			enable = true
+		},
+		incremental_selection = {
+			enable = true
+		},
 		rainbow = {
 			enable = true,
 			extended_mode = false,
+			disable = { "html" },
 			colors = { "#FFD300", "#00A0FF", "#FFD300" }
 		},
 	})

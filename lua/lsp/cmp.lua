@@ -57,7 +57,10 @@ M.setup = function()
 		sources = {
 			{ name = "luasnip" },
 			{ name = "nvim_lsp" },
-			{ name = "buffer" },
+			{ name = "buffer", {
+				keyword_length = 5
+			},
+			},
 			{ name = "path" },
 		},
 
