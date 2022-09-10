@@ -21,6 +21,7 @@ packer.startup({ function(use)
 			require('mason').setup()
 		end
 	}
+	use "ray-x/lsp_signature.nvim"
 
 	use({
 		"glepnir/lspsaga.nvim",
@@ -89,13 +90,6 @@ packer.startup({ function(use)
 	})
 	use('nvim-treesitter/playground')
 	use("p00f/nvim-ts-rainbow")
-	use {
-		'lewis6991/spellsitter.nvim',
-		config = function()
-			require('spellsitter').setup()
-		end
-	} -- Fixes showing spelling errors on language keywords
-
 
 	-- Autopairs
 	use({
