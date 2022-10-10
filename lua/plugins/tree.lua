@@ -18,8 +18,7 @@ M.setup = function() neo_tree.setup({
 			}
 		},
 		window = {
-			position = "right",
-			width = 60
+			position = "current",
 		}
 	})
 end

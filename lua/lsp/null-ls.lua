@@ -8,14 +8,14 @@ local code_actions = null_ls.builtins.code_actions
 local M = {}
 
 -- Fixes eslint no configuration found
--- only runs if there is eslint present installed locally rather than using
--- the global one.
+-- only runs if there is eslint present installed locally rather than
+-- searching for a global one.
 local eslint_d = function()
 	local project_local_bin = "node_modules/.bin/eslint"
 
 	return null_ls.builtins.diagnostics.eslint_d.with({
 		condition = function(utils)
-			return utils.root_has_file(project_local_bin) and project_local_bin
+			return utils.root_has_file(project_local_bin)
 		end
 	})
 end

@@ -15,7 +15,7 @@ M.setup = function()
 	typescript.setup({
 		server = {
 			on_attach = function(client)
-				client.resolved_capabilities.document_formatting = false
+				client.server_capabilities.document_formatting = false
 
 				-- Keymappings
 				util.map("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
