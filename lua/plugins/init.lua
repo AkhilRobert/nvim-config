@@ -28,6 +28,12 @@ packer.startup({ function(use)
 			require('lsp_signature').setup({})
 		end
 	}
+	use { "mfussenegger/nvim-jdtls",
+		ft = { "java" },
+		config = function()
+			require('lsp.servers.jdtls').setup()
+		end
+	}
 
 	use({
 		"glepnir/lspsaga.nvim",
