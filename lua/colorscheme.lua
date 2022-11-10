@@ -10,5 +10,4 @@ require('vscode').setup {
 
 hl(0, 'FidgetTitle', { fg = c.vscGreen, bg = 'NONE' })
 hl(0, 'FidgetTask', { fg = c.vscGreen, bg = 'NONE' })
-hl(0, 'TSConstant', { fg = "#4FC0FF", bg = 'NONE' }) -- To mimic vscode more
-hl(0, 'variable', { fg = c.vscRed })
+hl(0, '@constant', { fg = "#4FC0FF", bg = 'NONE' }) -- To mimic vscode more
