@@ -28,12 +28,23 @@ packer.startup({ function(use)
 			require('lsp_signature').setup({})
 		end
 	}
+
+	-- Custom implementation of language servers
 	use { "mfussenegger/nvim-jdtls",
 		ft = { "java" },
 		config = function()
 			require('lsp.servers.jdtls').setup()
 		end
 	}
+
+	use({
+		"mhanberg/elixir.nvim",
+		ft = { "elixir", "eelixir", "heex", "surface" },
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require('lsp.servers.elixirls').setup()
+		end
+	})
 
 	use({
 		"glepnir/lspsaga.nvim",
