@@ -6,20 +6,20 @@ local cmp = require("cmp")
 local M = {}
 
 M.setup = function()
-	autotag.setup()
+  autotag.setup()
 
-	ts_autotag.setup {
-		enable = true
-	}
+  ts_autotag.setup {
+    enable = true
+  }
 
-	cmp.event:on("confirm_done",
-		cmp_autopairs.on_confirm_done({
-			filetypes = {
-				-- Disables for prisma files
-				prisma = false
-			}
-		})
-	)
+  cmp.event:on("confirm_done",
+    cmp_autopairs.on_confirm_done({
+      filetypes = {
+        -- Disables for prisma files
+        prisma = false
+      }
+    })
+  )
 end
 
 

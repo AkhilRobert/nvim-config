@@ -2,7 +2,7 @@
 -- local typescript = require('typescript')
 local ok, typescript = pcall(require, 'typescript')
 if not ok then
-	return
+  return
 end
 
 local handler = require('lsp.handlers')
@@ -12,22 +12,22 @@ local M = {}
 
 -- Creates autocmd
 M.setup = function()
-	typescript.setup({
-		server = {
-			on_attach = function(client)
-				client.server_capabilities.document_formatting = false
+  typescript.setup({
+    server = {
+      on_attach = function(client)
+        client.server_capabilities.document_formatting = false
 
-				-- Keymappings
-				util.map("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
-				util.map("n", "<leader>to", function()
-					typescript.actions.organizeImports()
-					typescript.actions.removeUnused()
-				end)
+        -- Keymappings
+        util.map("n", "<leader>ti", ":TypescriptAddMissingImports<CR>")
+        util.map("n", "<leader>to", function()
+          typescript.actions.organizeImports()
+          typescript.actions.removeUnused()
+        end)
 
-			end,
-			capabilities = handler.capabilities
-		}
-	})
+      end,
+      capabilities = handler.capabilities
+    }
+  })
 end
 
 return M

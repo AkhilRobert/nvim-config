@@ -6,7 +6,7 @@ local M = {}
 ft.set('prisma', '//%s')
 
 M.setup = function()
-	lsp.prismals.setup {}
+  lsp.prismals.setup {}
 end
 
 return M

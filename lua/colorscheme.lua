@@ -4,8 +4,8 @@ local hl = vim.api.nvim_set_hl
 vim.o.background = "dark"
 
 require('vscode').setup {
-	group_overrides = {
-	}
+  group_overrides = {
+  }
 }
 
 hl(0, 'FidgetTitle', { fg = c.vscGreen, bg = 'NONE' })

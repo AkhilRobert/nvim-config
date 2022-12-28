@@ -8,12 +8,12 @@ local clangd = require('lsp.servers.clangd')
 local M = {}
 
 M.setup = function()
-	sumneko.setup()
-	prisma.setup()
-	pyright.setup()
-	gopls.setup()
-	rust.setup()
-	clangd.setup()
+  sumneko.setup()
+  prisma.setup()
+  pyright.setup()
+  gopls.setup()
+  rust.setup()
+  clangd.setup()
 end
 
 return M
