@@ -11,6 +11,12 @@ M.setup = function()
     move_in_saga = {
       prev = "<C-b>",
       next = "<C-f>"
+    },
+    ui = {
+      border = 'rounded'
+    },
+    symbol_in_winbar = {
+      enable = false
     }
   })
 end
