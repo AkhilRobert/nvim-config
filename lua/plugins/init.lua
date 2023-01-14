@@ -8,7 +8,7 @@ packer.startup({ function(use)
   use "lukas-reineke/indent-blankline.nvim"
 
   -- Colorschemes
-  use("Mofiqul/vscode.nvim")
+  use 'Mofiqul/vscode.nvim'
 
   -- Utils
   use("nvim-lua/plenary.nvim")

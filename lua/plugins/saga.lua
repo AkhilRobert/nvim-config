@@ -3,7 +3,7 @@ local saga = require('lspsaga')
 local M = {}
 
 M.setup = function()
-  saga.init_lsp_saga({
+  saga.setup({
     code_action_lightbulb = {
       enable = false
     },
