@@ -4,7 +4,7 @@ local handler = require('lsp.handlers')
 local M = {}
 
 M.setup = function()
-  lsp.sumneko_lua.setup {
+  lsp.lua_ls.setup {
     settings = {
       Lua = {
         telementry = {
