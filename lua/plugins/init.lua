@@ -173,6 +173,13 @@ packer.startup({
         statusline.setup()
       end,
     })
+    -- Flutter
+    use({
+      "akinsho/flutter-tools.nvim",
+      requires = {
+        "stevearc/dressing.nvim"
+      }
+    })
   end,
   config = {
     display = {
