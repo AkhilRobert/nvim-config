@@ -23,4 +23,4 @@ utils.map("n", "fb", "<cmd>Telescope buffers<CR>")
 utils.map("n", "fd", "<cmd>Telescope diagnostics<CR>")
 
 -- Neotree
-utils.map("n", "<leader>e", ":Neotree toggle reveal_force_cwd<CR>")
+utils.map("n", "<leader>e", ":Neotree current toggle reveal_force_cwd<CR>")

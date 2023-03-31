@@ -20,10 +20,6 @@ M.setup = function()
         modified = ""
       }
     },
-    -- TODO: currently it is lazy fix make sure it takes the whole buffer
-    window = {
-      position = "right",
-    }
   })
 end
 
