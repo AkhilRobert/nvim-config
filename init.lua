@@ -46,18 +46,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 require("settings")
-
---require("plugins")
 require("keymappings")
---require('indent_blankline').setup({
---  char = "▏",
---  show_trailing_blankline_indent = false,
---  use_treesitter = true,
---  show_current_context = true,
---})
-
-
 require("colorscheme")
--- require("lsp")
--- require('snippets').setup()
+require("lsp.init")
 
+vim.api.nvim_set_hl(0, 'TSRainbowGolden', {fg = '#FFD300'})
+vim.api.nvim_set_hl(0, 'TSRainbowPink', {fg = '#DA70D6'})
+vim.api.nvim_set_hl(0, 'TSRainbowBlue',   {fg = '#00A0FF'})
