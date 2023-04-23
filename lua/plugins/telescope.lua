@@ -8,7 +8,7 @@ return {
     { "fd", "<cmd>Telescope diagnostics<CR>" },
   },
   opts = {
-   pickers = {
+    pickers = {
       find_files = {
         theme = "ivy",
         file_ignore_patterns = { "node%_modules/.*" }
