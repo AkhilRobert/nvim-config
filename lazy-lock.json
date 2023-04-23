@@ -1,0 +1,7 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "f66e68c00ef65b10e5b44ac80f68dd8e09a5927f" },
+  "neo-tree.nvim": { "branch": "v2.x", "commit": "7a6b0d43d70636edfec183fb49c02f725765da73" },
+  "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
+  "telescope.nvim": { "branch": "master", "commit": "f2645c13205abb9ee3dbcee68416645c69b863c8" },
+  "vscode.nvim": { "branch": "main", "commit": "dc5f37603ada51db13bc4009cbee628c5857a274" }
+}

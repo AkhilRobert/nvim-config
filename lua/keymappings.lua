@@ -17,10 +17,10 @@ utils.map("n", "ss", "<cmd>vsplit<CR>")
 utils.map("n", "sS", "<cmd>split<CR>")
 
 -- Telescope
-utils.map("n", "ff", "<cmd>Telescope find_files<CR>")
-utils.map("n", "fg", "<cmd>Telescope live_grep<CR>")
-utils.map("n", "fb", "<cmd>Telescope buffers<CR>")
-utils.map("n", "fd", "<cmd>Telescope diagnostics<CR>")
+-- utils.map("n", "ff", "<cmd>Telescope find_files<CR>")
+-- utils.map("n", "fg", "<cmd>Telescope live_grep<CR>")
+-- utils.map("n", "fb", "<cmd>Telescope buffers<CR>")
+-- utils.map("n", "fd", "<cmd>Telescope diagnostics<CR>")
 
 -- Neotree
 utils.map("n", "<leader>e", ":Neotree current toggle reveal_force_cwd<CR>")
