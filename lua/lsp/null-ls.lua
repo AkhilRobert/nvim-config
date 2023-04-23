@@ -21,19 +21,17 @@ local eslint_d = function()
 end
 
 local revive = function()
-  local config_filename = 'revive.toml'
-  local args = { "-formatter", "json" }
-  local exists = U.file_exists_cwd(config_filename)
-  if exists then
-    table.insert(args, "-config")
-    table.insert(args, config_filename)
-  end
+  -- local config_filename = 'revive.toml'
+  -- local args = { "-formatter", "json" }
+  -- local exists = U.file_exists_cwd(config_filename)
+  -- if exists then
+  --   table.insert(args, "-config")
+  --   table.insert(args, config_filename)
+  -- end
+  --
+  -- table.insert(args, "./...")
 
-  table.insert(args, "./...")
-
-  return diagnostics.revive.with({
-    args = args
-  })
+  return diagnostics.revive;
 end
 
 local codespell = function()
@@ -58,7 +56,7 @@ local sources = {
   -- go
   formatter.gofumpt,
   formatter.goimports,
-  -- revive(),
+  revive(),
 
   -- rust
   formatter.rustfmt,
