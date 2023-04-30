@@ -3,10 +3,5 @@ local ft = require('Comment.ft')
 local M = {}
 
 -- set's up comment string for prisma
-ft.set('prisma', '//%s')
+lsp.prismals.setup {}
 
-M.setup = function()
-  lsp.prismals.setup {}
-end
-
-return M

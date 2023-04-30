@@ -1,9 +1,4 @@
 local lsp = require('lspconfig')
 
-local M = {}
+lsp.pyright.setup {}
 
-M.setup = function()
-  lsp.pyright.setup {}
-end
-
-return M

@@ -4,6 +4,7 @@ return {
     "HiPhish/nvim-ts-rainbow2",
     "windwp/nvim-ts-autotag"
   },
+  event = "BufReadPost",
   config = function()
     require("nvim-treesitter.configs").setup({
       sync_install = false,
@@ -31,7 +32,8 @@ return {
       },
       autotag = {
         enable = true,
-      }
+        filetype = { "heex", "typescriptreact", "html", "elixir" }
+      },
     })
   end
 }

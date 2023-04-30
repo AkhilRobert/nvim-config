@@ -10,7 +10,7 @@ return {
       credo = {},
       elixirls = {
         capabilities = handler.capabilities,
-        cmd = "/Users/akhilrobert/.local/share/nvim/mason/packages/elixir-ls/language_server.sh",
+        cmd = vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh",
         enabled = true,
         settings = elixirls.settings {
           dialyzerEnabled = false,

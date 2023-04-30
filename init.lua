@@ -18,8 +18,10 @@ wo.cursorline = true
 o.splitright = true
 o.scrolloff = 10
 o.sidescrolloff = 5
-o.mouse = "a" -- enables mouse in all modes
+o.mouse = "a"      -- enables mouse in all modes
 o.signcolumn = "yes"
+o.swapfile = false -- disables the swapfile creation
+o.updatetime = 300 -- faster updates
 
 vim.g.mapleader = ","
 
@@ -44,11 +46,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('plugins')
-require("settings")
+require('lazy').setup("plugins")
 require("keymappings")
 require("colorscheme")
-require("lsp.init")
+require("lsp")
 
 vim.api.nvim_set_hl(0, 'TSRainbowGolden', { fg = '#FFD300' })
 vim.api.nvim_set_hl(0, 'TSRainbowPink', { fg = '#DA70D6' })

@@ -15,6 +15,7 @@ return {
     'hrsh7th/cmp-path',
     'onsails/lspkind.nvim',
   },
+  event = "InsertEnter",
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
