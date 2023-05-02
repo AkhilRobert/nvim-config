@@ -28,7 +28,12 @@ return {
           'TSRainbowGolden',
           'TSRainbowPink',
           'TSRainbowBlue',
-        }
+        },
+        query = {
+          'rainbow-parens',
+          html = 'rainbow-parens'
+        },
+        extended_mode = true,
       },
       autotag = {
         enable = true,
