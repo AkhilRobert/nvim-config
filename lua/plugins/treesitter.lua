@@ -2,7 +2,8 @@ return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
     "HiPhish/nvim-ts-rainbow2",
-    "windwp/nvim-ts-autotag"
+    "windwp/nvim-ts-autotag",
+    "nvim-treesitter/playground"
   },
   event = "BufReadPost",
   config = function()
