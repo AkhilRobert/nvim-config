@@ -46,7 +46,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup("plugins")
+require('lazy').setup("plugins", {
+  dev = {
+    path = "~/Programming/plugins/"
+  }
+})
 require("keymappings")
 require("colorscheme")
 require("lsp")
