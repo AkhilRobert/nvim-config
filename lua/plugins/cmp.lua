@@ -10,6 +10,7 @@ return {
     'onsails/lspkind.nvim',
   },
   event = "InsertEnter",
+  commit = "0f47dcaf7e39d64cd067e090e6f2eda6326e7366",
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')

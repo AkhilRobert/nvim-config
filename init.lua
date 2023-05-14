@@ -23,6 +23,7 @@ o.signcolumn = "yes"
 o.swapfile = false -- disables the swapfile creation
 o.updatetime = 300 -- faster updates
 
+
 vim.g.mapleader = ","
 
 -- Highlight text on yank
