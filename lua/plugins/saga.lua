@@ -19,7 +19,7 @@ return {
     { "nvim-treesitter/nvim-treesitter" }
   },
   keys = {
-    { "K",          "<cmd> Lspsaga hover_doc<CR>" },
+    { "K",          "<cmd>Lspsaga hover_doc<CR>" },
     { "<leader>ln", "<cmd>Lspsaga rename<CR>" },
     { "<leader>la", "<cmd>Lspsaga code_action<CR>" },
     { "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>" },

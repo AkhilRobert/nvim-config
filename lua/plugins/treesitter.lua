@@ -2,10 +2,10 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      { "HiPhish/nvim-ts-rainbow2", dev = false },
+      { "HiPhish/nvim-ts-rainbow2", dev = true },
       "windwp/nvim-ts-autotag",
     },
-    event = "VeryLazy",
+    build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
         sync_install = false,
