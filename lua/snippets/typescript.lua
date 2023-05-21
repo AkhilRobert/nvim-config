@@ -1,7 +1,7 @@
 local ls = require('luasnip')
 
 local s = ls.snippet
-local t = ls.text_node -- static text
+local t = ls.text_node   -- static text
 local i = ls.insert_node -- text that can be inserted
 
 ls.add_snippets("typescript", {

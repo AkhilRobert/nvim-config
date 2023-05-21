@@ -1,8 +1,6 @@
-local lualine = require("lualine")
-local M = {}
-
-M.setup = function()
-  lualine.setup({
+return {
+  "nvim-lualine/lualine.nvim",
+  opts = {
     options = {
       component_separators = {},
       section_separators = {},
@@ -17,7 +15,5 @@ M.setup = function()
       lualine_y = { "progress" },
       lualine_z = { "location" },
     },
-  })
-end
-
-return M
+  }
+}

@@ -1,3 +1,4 @@
-require("lsp.null-ls").setup()
-require("lsp.cmp").setup()
-require('lsp.servers').setup()
+local U = require('utils')
+
+U.load_module('lsp/servers')
+

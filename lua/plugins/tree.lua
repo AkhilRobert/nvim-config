@@ -1,11 +1,12 @@
-local neo_tree = require('neo-tree')
-local M = {}
-
-
-M.setup = function()
-  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
-  neo_tree.setup({
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
+  },
+  opts = {
     default_component_configs = {
       icon = {
         folder_closed = '',
@@ -20,7 +21,8 @@ M.setup = function()
         modified = ""
       }
     },
-  })
-end
-
-return M
+  },
+  keys = {
+    { "<leader>e", ":Neotree current toggle reveal_force_cwd<CR>" }
+  }
+}
