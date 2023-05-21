@@ -1,3 +1,8 @@
 return {
-  'Mofiqul/vscode.nvim'
+  {
+    'Mofiqul/vscode.nvim'
+  },
+  {
+    'folke/tokyonight.nvim'
+  }
 }
