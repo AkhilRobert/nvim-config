@@ -24,13 +24,13 @@ return {
         },
         autotag = {
           enable = true,
-          filetype = { "heex", "typescriptreact", "html", "elixir" }
+          filetype = { "heex", "typescriptreact", "html", }
         },
       })
     end
   },
   {
     "nvim-treesitter/playground",
-    cmd = "TSPlaygroundToggle"
+    cmd = { "TSPlaygroundToggle", "TSHighlightCapturesUnderCursor" }
   },
 }
