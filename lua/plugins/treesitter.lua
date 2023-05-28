@@ -3,6 +3,11 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "windwp/nvim-ts-autotag",
+      {
+        "AkhilRobert/nvim-ts-rainbow2",
+        {
+        }
+      }
     },
     build = ":TSUpdate",
     config = function()
@@ -26,6 +31,14 @@ return {
           enable = true,
           filetype = { "heex", "typescriptreact", "html", }
         },
+        rainbow = {
+          enable = true,
+          hlgroups = {
+            "TSRainbowYellow",
+            "TSRainbowMagenta",
+            "TSRainbowBlue",
+          },
+        }
       })
     end
   },

@@ -42,7 +42,7 @@ return {
       -- go
       formatter.gofumpt,
       formatter.goimports,
-      revive(),
+      -- revive(),
 
       -- rust
       formatter.rustfmt,
