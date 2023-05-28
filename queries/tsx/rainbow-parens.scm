@@ -6,7 +6,3 @@
   "}" @closing
 ) @container
 
-(array_pattern
-  "[" @opening
-  "]" @closing
-) @container
