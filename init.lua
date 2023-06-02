@@ -20,7 +20,7 @@ o.scrolloff = 10
 o.sidescrolloff = 5
 o.mouse = "a"      -- enables mouse in all modes
 o.signcolumn = "yes"
-o.swapfile = false -- disables the swapfile creation
+o.swapfile = true  -- enables the swapfile creation
 o.updatetime = 300 -- faster updates
 
 

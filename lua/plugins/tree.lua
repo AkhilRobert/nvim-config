@@ -23,6 +23,6 @@ return {
     },
   },
   keys = {
-    { "<leader>e", ":Neotree current toggle reveal_force_cwd<CR>" }
+    { "<leader>e", "<CMD>Neotree current toggle reveal_force_cwd<CR>" }
   }
 }

@@ -10,7 +10,7 @@ return {
     'onsails/lspkind.nvim',
   },
   event = "InsertEnter",
-  commit = "0f47dcaf7e39d64cd067e090e6f2eda6326e7366",
+  -- commit = "0f47dcaf7e39d64cd067e090e6f2eda6326e7366",
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
@@ -22,7 +22,6 @@ return {
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
       return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     end
-
     cmp.setup({
       completion = {
         -- selects the first value of the completion menu automatically
@@ -33,6 +32,7 @@ return {
           require('luasnip').lsp_expand(args.body)
         end
       },
+
       mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -72,7 +72,6 @@ return {
         { name = "path" },
       },
       window = {
-        documentation = true,
       },
       experimental = {
         ghost_text = true
@@ -81,7 +80,6 @@ return {
         format = lspkind.cmp_format({
           mode = 'symbol',
           preset = 'codicons',
-          maxwidth = 70
         })
       }
     })
