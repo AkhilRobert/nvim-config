@@ -3,11 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "windwp/nvim-ts-autotag",
-      {
-        "AkhilRobert/nvim-ts-rainbow2",
-        {
-        }
-      }
+      "HiPhish/nvim-ts-rainbow2"
     },
     build = ":TSUpdate",
     config = function()

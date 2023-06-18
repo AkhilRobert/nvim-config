@@ -1,9 +1,11 @@
 ; inherits: typescript
-;; This removes highlighting the arrow of JSX elements
+;; This is to remove tag highlighting in the JSX Tags
 
 (jsx_expression
   "{" @opening
-  "}" @closing) @container
+  "}" @closing
+) @container
+
 
 (variable_declarator
   name: (array_pattern 

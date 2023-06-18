@@ -14,3 +14,10 @@
   "{" @opening
   "}" @closing
 ) @container
+
+(variable_declarator
+  name: (array_pattern 
+    "[" @opening
+    "]" @closing
+  )
+)
