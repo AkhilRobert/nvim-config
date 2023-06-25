@@ -1,8 +1,6 @@
+local lsp = require('lspconfig')
 local handler = require('lsp.handlers')
 
-require 'lspconfig'.volar.setup {
+lsp.ocamllsp.setup({
   capabilities = handler.capabilities,
-  init_options = {
-    serverMode = 0
-  }
-}
+})

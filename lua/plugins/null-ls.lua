@@ -20,7 +20,9 @@ return {
       --
       -- table.insert(args, "./...")
 
-      return diagnostics.revive;
+      return diagnostics.revive.with({
+        args = { "-config", "revive.toml", "-formatter", "json", "./..." }
+      });
     end
 
     local codespell = function()
@@ -42,7 +44,7 @@ return {
       -- go
       formatter.gofumpt,
       formatter.goimports,
-      -- revive(),
+      revive(),
 
       -- rust
       formatter.rustfmt,

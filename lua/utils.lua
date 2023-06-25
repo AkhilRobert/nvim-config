@@ -27,7 +27,7 @@ M.load_module = function(module)
       local file_name = module .. "." .. v
       local ok, _ = pcall(require, file_name)
       if not ok then
-        print("unable ot require module " .. file_name)
+        print("unable to require module " .. file_name)
       end
     end
   end
