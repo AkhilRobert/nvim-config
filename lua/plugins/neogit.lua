@@ -1,4 +1,7 @@
 return {
-  "TimUntersberger/neogit",
-  cmd = "Neogit"
+  "NeogitOrg/neogit",
+  cmd = "Neogit",
+  config = function()
+    require('neogit').setup()
+  end
 }
