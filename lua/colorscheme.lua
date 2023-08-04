@@ -13,7 +13,8 @@ vscode.setup({
     ['@text.title'] = {},
     ['@text.title.1'] = { fg = c.vscBlue, bold = true },
     ['@text.title.2'] = { fg = c.vscBlue, bold = true },
-    ['@lsp.typemod.variable.constant.rust'] = { fg = c_constant }
+    ['@lsp.typemod.variable.constant.rust'] = { fg = c_constant },
+    ['@lsp.typemod.variable.readonly.typescriptreact'] = { fg = c_constant }
   }
 })
 vscode.load()
