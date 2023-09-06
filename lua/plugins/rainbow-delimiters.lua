@@ -7,7 +7,8 @@ return {
         "TSRainbowYellow",
         "TSRainbowMagenta",
         "TSRainbowBlue"
-      }
+      },
+      blacklist = { 'html' }
     }
   end
 }

@@ -1,7 +1,7 @@
 local c = require('vscode.colors').get_colors()
 local vscode = require('vscode')
 
-local hl = vim.api.nvim_set_hl
+-- local hl = vim.api.nvim_set_hl
 vim.o.background = "dark"
 
 local c_constant = "#4FC0FF"
@@ -14,7 +14,8 @@ vscode.setup({
     ['@text.title.1'] = { fg = c.vscBlue, bold = true },
     ['@text.title.2'] = { fg = c.vscBlue, bold = true },
     ['@lsp.typemod.variable.constant.rust'] = { fg = c_constant },
-    ['@lsp.typemod.variable.readonly.typescriptreact'] = { fg = c_constant }
+    ['@lsp.typemod.variable.readonly.typescriptreact'] = { fg = c_constant },
+    ['@lsp.typemod.variable.readonly.go'] = { fg = c_constant },
   }
 })
 vscode.load()

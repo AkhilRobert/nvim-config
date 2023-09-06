@@ -42,9 +42,9 @@ return {
       formatter.isort,
 
       -- go
-      formatter.gofumpt,
+      -- formatter.gofumpt,
       formatter.goimports,
-      revive(),
+      -- revive(),
 
       -- rust
       formatter.rustfmt,
