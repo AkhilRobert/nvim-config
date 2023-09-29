@@ -10,6 +10,7 @@ lsp.clangd.setup {
   capabilities = capabilities,
   cmd = {
     "clangd",
-    "-header-insertion=never"
+    "--clang-tidy",
+    "-header-insertion=never",
   }
 }
