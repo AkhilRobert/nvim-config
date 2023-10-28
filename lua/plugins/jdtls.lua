@@ -7,11 +7,17 @@ return {
     local root_markers = { 'gradlew', 'pom.xml' }
     local root_dir = require('jdtls.setup').find_root(root_markers)
     local home = os.getenv('HOME')
-    local workspace_folder = home .. "/.workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+    local workspace_folder = home .. "/.cache/java-workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
     local jdtls = require('jdtls')
 
     local extendedClientCapabilities = jdtls.extendedClientCapabilities
     extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+
+    local capabilities = vim.tbl_deep_extend('force', handler.capabilities, {
+      server_capabilities = {
+        semanticTokensProvider = 'full'
+      }
+    })
 
     local config = {
       cmd = {
@@ -82,7 +88,7 @@ return {
       init_options = {
         bundles = {}
       },
-      capabilities = handler.capabilities,
+      capabilities = capabilities,
       on_attach = function()
         require('jdtls').setup.add_commands()
       end
