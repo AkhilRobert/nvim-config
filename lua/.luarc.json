@@ -31,5 +31,8 @@
         "/Users/akhilrobert/.local/share/nvim/lazy/cmp_luasnip/after",
         "${3rd}/luassert/library",
         "${3rd}/luv/library"
+    ],
+    "diagnostics.disable": [
+        "undefined-field"
     ]
 }
