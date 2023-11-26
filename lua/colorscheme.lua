@@ -19,3 +19,15 @@ vscode.setup({
   }
 })
 vscode.load()
+
+
+-- require("tokyonight").setup({
+--   styles = {
+--     comments = { italic = true },
+--     keywords = { italic = false },
+--     functions = {},
+--     variables = {},
+--   },
+-- })
+--
+-- vim.cmd [[colorscheme tokyonight]]

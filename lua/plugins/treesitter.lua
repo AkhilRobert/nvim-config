@@ -19,9 +19,6 @@ return {
         incremental_selection = {
           enable = true
         },
-        context_commentstring = {
-          enable = true,
-        },
         autotag = {
           enable = true,
           filetype = { "heex", "typescriptreact", "html", }

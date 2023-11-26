@@ -1,11 +1,11 @@
 ; inherits: cpp
 
 (condition_clause
-  "(" @opening
-  ")" @closing
+  "(" @delimiter
+  ")" @delimiter @sentinel
 ) @container
 
 (for_statement
-  "(" @opening
-  ")" @closing
-) @container
+  "(" @delimiter
+  ")" @delimiter
+) @sentinel
