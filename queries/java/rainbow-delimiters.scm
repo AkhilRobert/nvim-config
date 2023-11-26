@@ -1,11 +1,11 @@
 ;inherits: java
 
 (for_statement
-    "(" @opening
-    ")" @closing
+    "(" @delimiter
+    ")" @delimiter @sentinel
 ) @container
 
 (condition
-    "(" @opening
-    ")" @closing
+    "(" @delimiter
+    ")" @delimiter @sentinel
 ) @container

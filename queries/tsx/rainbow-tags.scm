@@ -2,14 +2,14 @@
 ;; This is to remove tag highlighting in the JSX Tags
 
 (jsx_expression
-  "{" @opening
-  "}" @closing
+  "{" @delimiter
+  "}" @delimiter @sentinel
 ) @container
 
 
 (variable_declarator
   name: (array_pattern 
-    "[" @opening
-    "]" @closing
+    "[" @delimiter
+    "]" @delimiter @sentinel
   )
 )

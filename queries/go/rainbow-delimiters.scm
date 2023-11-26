@@ -1,6 +1,6 @@
 ;inherits: go
 
 (index_expression
-  "[" @opening
-  "]" @closing
+  "[" @delimiter
+  "]" @delimiter @sentinel
 ) @container

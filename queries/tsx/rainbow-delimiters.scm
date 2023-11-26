@@ -2,12 +2,13 @@
 ;; This removes highlighting the arrow of JSX elements
 
 (jsx_expression
-  "{" @opening
-  "}" @closing) @container
+  "{" @delimiter
+  "}" @delimiter @sentinel
+) @container
 
 (variable_declarator
   name: (array_pattern 
-    "[" @opening
-    "]" @closing
+    "[" @delimiter
+    "]" @delimiter @sentinel
   )
 )

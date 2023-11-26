@@ -1,7 +1,6 @@
 local c = require('vscode.colors').get_colors()
 local vscode = require('vscode')
 
-local hl = vim.api.nvim_set_hl
 vim.o.background = "dark"
 
 local c_constant = "#4FC0FF"

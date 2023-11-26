@@ -1,23 +1,23 @@
 ;inherits: javascript
 
 (array_pattern
-  "[" @opening
-  "]" @closing
+  "[" @delimiter
+  "]" @delimiter @sentinel
 ) @container
 
 (array_type
-  "[" @opening
-  "]" @closing
+  "[" @delimiter
+  "]" @delimiter @sentinel
 ) @container
 
 (object_type
-  "{" @opening
-  "}" @closing
+  "{" @delimiter
+  "}" @delimiter @sentinel
 ) @container
 
 (variable_declarator
   name: (array_pattern 
-    "[" @opening
-    "]" @closing
+    "[" @delimiter
+    "]" @delimiter @sentinel
   )
-)
+) @container

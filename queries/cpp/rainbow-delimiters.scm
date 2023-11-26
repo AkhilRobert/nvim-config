@@ -7,5 +7,5 @@
 
 (for_statement
   "(" @delimiter
-  ")" @delimiter
-) @sentinel
+  ")" @delimiter @sentinel
+) @container
