@@ -22,6 +22,7 @@ o.mouse = "a"      -- enables mouse in all modes
 o.signcolumn = "yes"
 o.swapfile = true  -- enables the swapfile creation
 o.updatetime = 300 -- faster updates
+o.clipboard = 'unnamed'
 
 
 vim.g.mapleader = ","

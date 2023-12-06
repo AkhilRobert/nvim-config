@@ -11,4 +11,4 @@
     "[" @delimiter
     "]" @delimiter @sentinel
   )
-)
+) @container

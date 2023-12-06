@@ -9,3 +9,15 @@
   "(" @delimiter
   ")" @delimiter @sentinel
 ) @container
+
+(for_range_loop
+  body: (compound_statement
+          "{" @delimiter 
+          "}" @delimiter @sentinel) 
+) @container
+
+(for_range_loop
+  "(" @delimiter
+  ")" @delimiter @sentinel
+) @container
+
