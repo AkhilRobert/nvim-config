@@ -8,7 +8,7 @@ return {
         char = "▏",
       },
       scope = {
-        show_start = false
+        enabled = false,
       }
     })
   end

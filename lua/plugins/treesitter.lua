@@ -14,7 +14,7 @@ return {
         },
         indent = {
           enable = true,
-          disable = { "python", "elixir" }
+          disable = { "python", "elixir", "ocaml" }
         },
         incremental_selection = {
           enable = true

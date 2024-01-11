@@ -1,6 +1,6 @@
 return {
   "HiPhish/rainbow-delimiters.nvim",
-  enabled = true,
+  enabled = false,
   config = function()
     vim.g.rainbow_delimiters = {
       highlight = {

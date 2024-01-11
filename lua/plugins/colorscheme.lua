@@ -1,11 +1,9 @@
 return {
   {
-    'Mofiqul/vscode.nvim'
-  },
-  {
-    "folke/tokyonight.nvim",
+    'Mofiqul/vscode.nvim',
     lazy = false,
     priority = 1000,
-    opts = {},
-  }
+  },
+  { "folke/tokyonight.nvim" },
+  { "catppuccin/nvim" }
 }
