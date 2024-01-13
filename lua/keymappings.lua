@@ -1,7 +1,7 @@
 local utils = require('utils')
 
 
-utils.map("n", "<C-n>", ":nohl<CR>")
+utils.map("n", "<C-h>", ":nohl<CR>")
 
 -- LSP
 local lsp_buf = vim.lsp.buf;

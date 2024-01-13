@@ -21,6 +21,10 @@ local capabilities = vim.tbl_deep_extend('force', handler.capabilities, {
   }
 })
 
+local lombok_config = string.format(
+  "-javaagent:%s",
+  vim.fn.expand("$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"))
+
 local config = {
   cmd = {
 
@@ -34,6 +38,7 @@ local config = {
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
     '-Xms1g',
+    lombok_config,
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
